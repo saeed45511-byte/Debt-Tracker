@@ -1,6 +1,6 @@
 package com.debt.tracker;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private EditText etName, etAmount;
     private TextView tvRecords;
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
                 String updatedData = newEntry + currentData;
 
                 sharedPreferences.edit().putString("records", updatedData).apply();
-                
+
                 etName.setText("");
                 etAmount.setText("");
                 loadRecords();
